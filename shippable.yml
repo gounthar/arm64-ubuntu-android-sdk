@@ -20,4 +20,4 @@ build:
     - docker build . -t arm64-ubuntu-android-sdk:latest
     
   post_ci:
-    - docker push docker-hub-org/arm64-ubuntu-android-sdk:latest
+    - docker push gounthar/arm64-ubuntu-android-sdk:latest
