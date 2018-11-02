@@ -11,8 +11,17 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
    /var/lib/dpkg/info/ca-certificates-java.postinst configure && printf "2\n" | update-alternatives --config java && \
    apt-get remove -y openjdk-11-jre-headless 
 RUN find / -name android 
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-RUN /usr/lib/aarch64-linux-gnu/android/android update sdk --no-ui --all
+# download and install Android SDK # https://developer.android.com/studio/#downloads
+ENV ANDROID_SDK_VERSION 4333796 
+RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
+    wget -q https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
+    unzip *tools*linux*.zip && \
+    rm *tools*linux*.zip
+    
+# set the environment variables
+ENV ANDROID_HOME /opt/android-sdk
+
+RUN $ANDROID_HOME/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && \ 
    /usr/local/android-sdk-linux/tools/bin/sdkmanager --update
 
