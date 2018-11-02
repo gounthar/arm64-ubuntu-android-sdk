@@ -1,0 +1,14 @@
+language: none
+
+sudo: required
+
+runtime:
+  nodePool: shippable_shared_aarch64
+  
+build:
+  pre_ci_boot:
+    image_name: arm64v8/ubuntu
+    image_tag: latest
+    
+  ci:
+    - docker build . 
