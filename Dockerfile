@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
    apt-get remove -y openjdk-11-jre-headless 
 RUN find / -name android 
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-RUN /usr/local/android-sdk-linux/tools/bin/android update sdk --no-ui --all
+RUN /usr/lib/aarch64-linux-gnu/android/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && \ 
    /usr/local/android-sdk-linux/tools/bin/sdkmanager --update
 
