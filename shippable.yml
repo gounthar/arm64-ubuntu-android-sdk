@@ -17,7 +17,7 @@ build:
     
   ci:
     - export DOCKER_ID_USER="gounthar"
-    - docker build . -t arm64-ubuntu-android-sdk:latest
+    - docker build . -t gounthar/arm64-ubuntu-android-sdk:latest
     
   post_ci:
     - docker push gounthar/arm64-ubuntu-android-sdk:latest
