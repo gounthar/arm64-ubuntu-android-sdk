@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
    /var/lib/dpkg/info/ca-certificates-java.postinst configure && printf "2\n" | update-alternatives --config java && \
    apt-get remove -y openjdk-11-jre-headless 
 RUN find / -name sdkmanager 
+RUN /usr/local/android-sdk-linux/tools/bin/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && \ 
    /usr/local/android-sdk-linux/tools/bin/sdkmanager --update
 
