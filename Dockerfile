@@ -19,7 +19,7 @@ RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     
 # set the environment variables
 ENV ANDROID_HOME /opt/android-sdk
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-arm64
 
 RUN find /opt/android-sdk -name android 
 
