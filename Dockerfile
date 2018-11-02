@@ -24,6 +24,5 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-arm64
 RUN find /opt/android-sdk -name android 
 
 #RUN $ANDROID_HOME/android update sdk --no-ui --all
-RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && \ 
-   /usr/local/android-sdk-linux/tools/bin/sdkmanager --update
+RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update
 
