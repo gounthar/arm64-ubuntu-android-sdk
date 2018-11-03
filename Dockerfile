@@ -26,5 +26,6 @@ ENV PATH="$JAVA_HOME/bin:$ANDROID_HOME/tools/bin:${PATH}"
 RUN which gradle
 #RUN $ANDROID_HOME/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update && \ 
-    $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.2"
+    $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.2" && \ 
+    $ANDROID_HOME/tools/bin/sdkmanager --uninstall "platforms;android-24"
 
