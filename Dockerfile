@@ -19,9 +19,7 @@ RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     
 # set the environment variables
 ENV ANDROID_HOME /opt/android-sdk
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-arm64
-
-RUN find / -name Info.plist 
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-arm64/jre
 
 #RUN $ANDROID_HOME/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update
