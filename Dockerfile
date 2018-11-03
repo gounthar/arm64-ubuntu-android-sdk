@@ -17,7 +17,7 @@ RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     wget -q https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
     unzip *tools*linux*.zip 
     
- RUN rm *tools*linux*.zip && cp -vraxu * $ANDROID_HOME && cd - && rm -fr /opt/android-sdk
+ RUN cd /opt/android-sdk && cp -vraxu * $ANDROID_HOME && cd - && rm -fr /opt/android-sdk
     
 # set the environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-arm64/jre
