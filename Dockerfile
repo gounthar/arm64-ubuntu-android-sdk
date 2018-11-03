@@ -17,9 +17,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
    apt-get autoremove -y && mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
    wget -q https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
    unzip *tools*linux*.zip && rm -fr *x86* && cd /opt/android-sdk && cp --remove-destination -vraxu * $ANDROID_HOME && \ 
-   cd && rm -fr /opt/android-sdk
-    
-RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update && \ 
-    $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.2" && \ 
-    $ANDROID_HOME/tools/bin/sdkmanager --uninstall "platforms;android-24"
+   cd && rm -fr /opt/android-sdk && yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && \ 
+   $ANDROID_HOME/tools/bin/sdkmanager --update && \ 
+   $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.2" && \ 
+   $ANDROID_HOME/tools/bin/sdkmanager --uninstall "platforms;android-24"
 SHELL ["/bin/bash", "-c"]
