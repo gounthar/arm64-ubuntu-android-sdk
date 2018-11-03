@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
 ENV ANDROID_SDK_VERSION 4333796 
 RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     wget -q https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
-    unzip *tools*linux*.zip 
+    unzip *tools*linux*.zip && rm -fr *x86*
     
 RUN cd /opt/android-sdk && cp --remove-destination -vraxu * $ANDROID_HOME 
 RUN cd && rm -fr /opt/android-sdk
