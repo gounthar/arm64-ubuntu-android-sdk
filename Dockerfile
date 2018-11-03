@@ -13,10 +13,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
 #   apt-get remove -y openjdk-11-jre-headless 
 # download and install Android SDK # https://developer.android.com/studio/#downloads
 ENV ANDROID_SDK_VERSION 4333796 
-RUN cd $ANDROID_HOME && \
+RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     wget -q https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
-    unzip *tools*linux*.zip && \
-    rm *tools*linux*.zip
+    unzip *tools*linux*.zip && rm *tools*linux*.zip && cp -vraxu * $ANDROID_HOME && cd - && rm -fr /opt/android-sdk
     
 # set the environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-arm64/jre
