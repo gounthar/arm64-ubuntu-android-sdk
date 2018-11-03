@@ -25,5 +25,5 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-arm64/jre
 RUN which gradle
 #RUN $ANDROID_HOME/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update && \ 
-    sdkmanager "platform-tools" "platforms;android-26"
+    sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.2"
 
