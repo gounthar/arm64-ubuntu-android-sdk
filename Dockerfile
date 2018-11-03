@@ -20,5 +20,5 @@ RUN apt-get update && apt-get install --no-install-recommends -y software-proper
    cd && rm -fr /opt/android-sdk && yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && \ 
    $ANDROID_HOME/tools/bin/sdkmanager --update && \ 
    $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.2" && \ 
-   $ANDROID_HOME/tools/bin/sdkmanager --uninstall "platforms;android-24"
+   $ANDROID_HOME/tools/bin/sdkmanager --uninstall "build-tools;24.0.0"
 SHELL ["/bin/bash", "-c"]
