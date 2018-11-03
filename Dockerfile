@@ -17,7 +17,7 @@ RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     wget -q https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
     unzip *tools*linux*.zip 
     
-RUN cd /opt/android-sdk && cp -vraxu * $ANDROID_HOME 
+RUN cd /opt/android-sdk && cp --remove-destination -vraxu * $ANDROID_HOME 
 RUN cd && rm -fr /opt/android-sdk
     
 # set the environment variables
