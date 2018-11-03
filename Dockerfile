@@ -22,6 +22,7 @@ RUN cd && rm -fr /opt/android-sdk
     
 # set the environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-arm64/jre
+ENV PATH="$JAVA_HOME/bin:$ANDROID_HOME/tools/bin:${PATH}"
 RUN which gradle
 #RUN $ANDROID_HOME/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update && \ 
