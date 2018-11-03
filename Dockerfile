@@ -21,7 +21,7 @@ RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
 ENV ANDROID_HOME /opt/android-sdk
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-arm64
 
-RUN find /usr/lib/jvm -name Info.plist 
+RUN find / -name Info.plist 
 
 #RUN $ANDROID_HOME/android update sdk --no-ui --all
 RUN yes|$ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update
